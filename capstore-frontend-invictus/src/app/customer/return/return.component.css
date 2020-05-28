@@ -1,0 +1,26 @@
+caption {
+    padding: 5px;
+    caption-side: top;
+}
+
+.btn-outline-add{
+      
+
+  border:none;
+
+  outline: none;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  height: 42px;
+  width: 200px;
+  background: #524361;
+  color: #fff;
+  font-size: 15px;
+
+  }
+
+.btn-outline-add:hover{
+    cursor: pointer;
+background: #372347;
+color: #ffffff;
+}

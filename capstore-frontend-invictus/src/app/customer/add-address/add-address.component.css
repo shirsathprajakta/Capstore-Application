@@ -1,0 +1,52 @@
+.animated {
+    animation: transitionIn 0.75s;
+}
+h2{
+    text-align: center;
+    
+}
+.col-lg-5{
+    font-size: 20px ;
+}
+
+.col-lg-7 input{
+    font-size: 15px ;
+    margin-bottom: 25px;
+    width: 390px;
+}
+.form-group {
+    margin-top: 50px;
+
+}
+h6{
+    font-size: 12px;
+    color: #ac1e1e;
+    margin-left: 5px;
+    margin-top: -20px;
+    
+    margin-bottom: 22px;
+
+  }
+button[class = "btn btn-outline-add"]{
+      
+    margin-top: 10px;
+  margin-left: 483px;
+  margin-right: 483px;
+  border:none;
+
+  outline: none;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  height: 42px;
+  width: 130px;
+  background: #524361;
+  color: #fff;
+  font-size: 15px;
+
+  }
+
+  button[class = "btn btn-outline-add"]:hover{
+    cursor: pointer;
+background: #372347;
+color: #ffffff;
+}

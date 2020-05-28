@@ -1,0 +1,85 @@
+.animated {
+    animation: transitionIn 0.75s;
+}
+h2{
+    text-align: center;
+    
+}
+.card{
+    min-height: 50px;
+    margin-top: 0px;
+    border: #000000;
+    margin-bottom: 60px;
+}
+h3{
+    margin-top: -30px;
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-bottom: 11px;
+    font-weight: 650;
+}
+h4{
+    
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 11px;
+    font-weight: 550;
+    
+}
+
+h5{
+    font-size: 15px;
+   
+    text-transform: capitalize;
+    
+    
+   
+}
+button[class = "btn btn-outline-delete"]{
+      
+    margin-top: -8px;
+  margin-left: 0px;
+  border:none;
+
+  outline: none;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  height: 35px;
+  width: 90px;
+  background: #524361;
+  color: #fff;
+  font-size: 15px;
+ border-radius: 0px;
+  }
+
+  button[class = "btn btn-outline-delete"]:hover{
+    cursor: pointer;
+background: #372347;
+color: #ffffff;
+}
+
+button[class = "btn btn-add"]{
+  
+    
+    margin-top: -50px;
+  
+  border:none;
+  font-weight: bold;
+  outline: none;
+  margin-right:315px;
+  margin-left: 315PX;
+  margin-bottom: 40px;
+  height: 57px;
+  width: 400px;
+  background: rgb(255, 255, 255);
+  color: #524361;
+  font-size: 28px;
+
+  }
+
+  button[class = "btn btn-add"]:hover{
+    cursor: pointer;
+background: #ffffff;
+color: #2b163b;
+
+}

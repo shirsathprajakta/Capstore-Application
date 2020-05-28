@@ -1,0 +1,48 @@
+<nav class="navbar navbar-dark fixed-top flex-md-nowrap p-0 shadow" style="background-color: #76618b;">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" routerLink="/user" style="background-color: #524361;">
+        <i class="fas fa-shopping-cart"></i> &nbsp;Capstore
+    </a>
+    
+    <ul class="navbar-nav px-3">
+        <li class="nav-item">
+            <span class="text-white">Home &nbsp;<i class="fa fa-home" aria-hidden="true"></i></span>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item main">
+                        <a class="nav-link" routerLink="/user/login">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/login-rounded-down.png" style="height: 30px;"/>   &nbsp;Login <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item main">
+                        <a class="nav-link" routerLink="/user/addUser">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/add-user-male.png" style="height: 30px;"/>  &nbsp;Register
+                        </a>
+                    </li>
+
+            
+
+                    <br>
+
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <p><i class="fas fa-calendar-alt"></i> &nbsp;{{todaysDate | date}}</p>
+                            <p><i class="fas fa-clock"></i> &nbsp;{{todaysDate | date:'h:mm:ss a'}}</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</div>

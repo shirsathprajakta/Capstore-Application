@@ -1,0 +1,111 @@
+<div class="container-fluid" style="margin-bottom: 5%;">
+   
+    <!-- Start of card view -->
+    <br>    
+    <h1 class="text-center"> Order Information </h1>
+    <!-- <div class="col-md-12 row" style="margin-top: 2%;margin-left: 5%;"> -->
+        <!-- <div class="form-group col-md-7">
+            <input type="text" class="form-control" placeholder="Search Customer" style="border-radius: 20px;">
+        </div> -->
+        <i class="fas fa-list offset-md-1" style="margin-top: 1%;" (click)="toggleViewList()">&nbsp;List
+            View</i>&nbsp;&nbsp;
+        <i class="fas fa-address-card" style="margin-top: 1%;" (click)="toggleViewCard()">Card View</i>
+    <!-- </div> -->
+    <br>
+    <div class="container mt-5" *ngIf="this.view">
+        <div class="card-group">
+            <div class="col-4 rowCard" *ngFor="let order of orders; let i=index">
+                <div class="card card-body "
+                    style="background-color: rgba(95, 82, 124, 0.07);border:5px outset white; border-radius: 10px;">
+
+                    <div class="card-body">
+                        
+                        <h4 class=" cardData textSize" style="margin-top: 10px; ">Order Id: {{order.orderId}}</h4>
+                        <h5 class=" cardData textSize">Product Name: {{order.product.productName}}</h5>
+                        <h5 class="cardData textSize">Order Date: {{order.orderDate | date}}</h5>
+                        <h5 class=" cardData textSize">Price: {{order.orderAmount}}</h5>
+                        <h5 class=" cardData textSize">Status: {{order.orderStatus}}</h5>
+                        <div class="row">
+                           
+                            <button type="button" style="margin-left: 20%;" class="btn btn-outline-add "
+                                 (click)="viewDetails(order)">View More</button>
+                                 <br/><br/>
+                                <button type="button" style="margin-left: 20%;" class="btn btn-outline-add " data-toggle="modal"
+                                    data-target=".bd-example-modal-lg" (click)="orderStatus(order)">Status</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of card view -->
+
+    <!-- Start of list view -->
+    <div class="container mt-5" *ngIf="this.view==false">
+        <br><br><br>
+        <table class="table table-striped table-responsive table-hover table-center text-bold">            
+
+            <thead style="background-color: #807191;">
+                <tr>
+                    <th>Order Id</th>
+                    <th>Product Name</th>
+                    <th>Order Date</th>
+                    <th>Price</th>
+                    <th>View More</th>
+                    <th>View Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders">
+                    
+                    <td style="width: 150px;">{{order.orderId}}</td>
+                    <td style="width: 150px;">{{order.product.productName}}</td>
+                    <td style="width: 150px;">{{order.orderDate | date}}</td>
+                    <td style="width: 150px;">{{order.orderAmount}}</td>
+                    <!-- <td style="width: 250px;">{{order.orderStatus}}</td> -->
+                    <td><button type="button" class="btn btn-outline-add " (click)="viewDetails(order)">View Details</button></td>
+                
+                    <td><button type="button" class="btn btn-outline-add " data-toggle="modal"
+                                data-target=".bd-example-modal-lg" (click)="orderStatus(order)">Status</button></td>
+                    
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- End of list view -->
+    <!-- Start of More Details modal -->
+    <div style="margin-bottom: 5%;">
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Status Information</h5>
+                        <button type="button btn-outline-add " class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-content">
+                        <div class="container mt-5">
+                            <div class="card-group">
+                                
+                                    <div class="card card-body "
+                                        style="background-color: rgba(84, 17, 240, 0.281);border:5px outset white; border-radius: 10px;">
+
+                                        <div class="card-body">
+                                            <h3>Status : {{order1.orderStatus}}</h3>
+                                            <h4>Updated On :{{order1.statusDate | date}}</h4>
+                                            
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

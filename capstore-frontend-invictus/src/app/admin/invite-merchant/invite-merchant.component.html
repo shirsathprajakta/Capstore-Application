@@ -1,0 +1,100 @@
+<div class="animated">
+    <div class="my-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-8 offset-md-2 border">
+                    <div class="row p-2">
+                        <div class="col-md-6 col-12">
+                            <p class="text-muted">
+                                Merchant Name
+                            </p>
+                            <p class="text-muted">
+                                Total Products
+                            </p>
+                            <p class="text-muted">
+                                Total Orders
+                            </p>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <button class="btn btn-info btn-xl mt-5 ml-5"> View Merchant </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="offset-md-6 col-4 col-md-2">
+                    <a routerLink="/admin/merchant-products" class="btn btn-outline-info px-3"> Products </a>
+                </div>
+                <div class="col-4 col-md-2">
+                    <a routerLink="/admin/merchant-feedbacks" class="btn btn-outline-danger px-3">
+                        
+                        Feedbacks <i class="fas fa-comments"></i>
+                    </a>
+                </div>
+                <div class="col-4 col-md-2">
+                    <a routerLink="/admin/merchant-orders" class="btn btn-outline-warning px-3">
+                        Orders <i class="fas fa-people-carry"></i>
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12 col-md-10 offset-md-1">
+                    <div class="row">
+                        <div class="col-12 col-md-8 offset-md-2 mb-3">
+                            <div class="lead font-weight-bold pl-2"> Merchant Invitation </div>
+                        </div>
+                    </div>
+                    <form [formGroup]="invitation" (ngSubmit)="sendInvite()">
+                        <div class="row">
+                            <div class="col-12 col-md-8 offset-md-2 mb-3">
+
+                                <label for="lead" for="header">Subject <sup class="text-danger">*</sup></label>
+                                <input type="text" formControlName="header" id="header" class="form-control"
+                                    placeholder="Enter Subject.">
+                                <div
+                                    *ngIf="(invitation.controls.header.touched || invitation.controls.header.dirty) && invitation.controls.header.errors">
+                                    <div class="badge badge-pill badge-danger"
+                                        *ngIf="invitation.controls.header.errors.required">
+                                        Subject of Invitation Is Must!
+                                    </div>
+                                    <div class="badge badge-pill badge-danger"
+                                        *ngIf="invitation.controls.header.errors.maxlength">
+                                        Subject of Invitation Cannot exceed 255 Characters!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-8 offset-md-2 mb-3">
+
+                                <label for="lead" for="message">Message <sup class="text-danger">*</sup></label>
+                                <textarea formControlName="message" id="message" cols="30" rows="10"
+                                    class="form-control" placeholder="Enter Message"
+                                    (keydown)="messageEvent()"></textarea>
+                                <div
+                                    *ngIf="(invitation.controls.message.touched || invitation.controls.message.dirty) && invitation.controls.message.errors">
+                                    <div class="badge badge-pill badge-danger"
+                                        *ngIf="invitation.controls.message.errors.required">
+                                        Message of Invitation Is Must!
+                                    </div>
+                                    <div class="badge badge-pill badge-danger"
+                                        *ngIf="invitation.controls.message.errors.maxlength">
+                                        Message of Invitation Cannot exceed 255 Characters!
+                                    </div>
+                                </div>
+                                <div *ngIf="!invitation.controls.message.errors && invitation.controls.message.dirty"
+                                    class="text-info">
+                                    {{  255 - messageLength }} characters left!
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 offset-md-3">
+                                <button class="btn btn-success btn-lg px-3 mx-3" type="submit"> Invite </button>
+                                <button class="btn btn-danger btn-lg px-3 mx-3" type="reset">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

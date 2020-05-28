@@ -1,0 +1,22 @@
+
+ .animated{
+  animation: transitionIn 0.75s;
+}
+@keyframes transitionIn{
+  from{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.bottom{
+  border-bottom: 2px solid black !important;
+}
+
+.card-header{
+  border-top:2px solid rgb(0, 140, 255);
+}

@@ -1,0 +1,119 @@
+<div class="container-fluid" style="margin-bottom: 5%;">
+    <div class="col-md-12 row" style="margin-top: 2%;margin-left: 5%;">
+        <div class="form-group col-md-7">
+            <input type="text" class="form-control" placeholder="Search Customer" [(ngModel)]="searchText" style="border-radius: 20px;">
+        </div>
+        <i class="fas fa-list offset-md-1" style="margin-top: 1%;" (click)="toggleViewList()">&nbsp;List View</i>&nbsp;&nbsp;
+        <i class="fas fa-address-card" style="margin-top: 1%;" (click)="toggleViewCard()">Card View</i>
+    </div>
+    <!-- <ng-container *ngIf="(customers | search:searchText) as result"> -->
+    <!-- Start of card view -->
+    <div class="container mt-5" *ngIf="this.view">
+        <div class="card-group">
+            <!-- <div class="col-4 rowCard" *ngFor="let customer of result;let i =index"> -->
+            <div class="col-4 rowCard" *ngFor="let i of pp">
+                <div class="card card-body " style="background-color: rgba(95, 82, 124, 0.07);border:5px outset white; border-radius: 10px;">
+
+                    <div class="card-body">
+
+                        <h5 class=" cardData textSize" style="margin-top: 10px; ">Name: Saurav Suman</h5>
+                        <h6 class=" cardData textSize">Phone Number: 9431998336</h6>
+                        <h6 class="cardData textSize">Username: sauravsuman6819@gmail.com</h6>
+                        <h6 class=" cardData textSize">Gender: Male</h6>
+                        <h6 class=" cardData textSize">Altername Phone Number: 9097032922</h6>
+                        <h6 class="cardData textSize">Email: <br>sauravsuman6819@gmail.com </h6>
+                        <div class="row">
+                            <button class="btn btn-outline-danger" (click)=deleteCustomer()>Delete</button>&nbsp;&nbsp;
+                            <button type="button" style="margin-left: 20%;" class="btn btn-outline-success" data-toggle="modal" data-target=".bd-example-modal-lg" (click)="viewAddress()">View Address</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of card view -->
+
+    <!-- Start of list view -->
+    <div *ngIf="this.view==false">
+        <br><br><br>
+        <table class="table table-striped table-responsive table-hover  text-bold">
+            <thead style="background-color: #807191;">
+                <tr>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Phone Number</th>
+                    <th>Alt Phone Number</th>
+                    <th>Alt Email id</th>
+                    <th>View Address</th>
+                    <th>Delete</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of pp">
+                    <!-- <tr *ngFor="let user of result"> -->
+                    <td>sauravsuman6819@gmail.com</td>
+                    <td style="width: 150px;">Saurav Suman</td>
+                    <td>Male</td>
+                    <td>9097032922</td>
+                    <td>9431998336</td>
+                    <td>boldbountyhunter@gmail.com</td>
+                    <td><button type="button" class="btn btn-outline-success" data-toggle="modal" data-target=".bd-example-modal-lg" (click)="viewAddress()">View</button></td>
+                    <td><button class="btn btn-outline-danger" (click)="deleteCustomer()">Delete</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- End of list view -->
+    <!-- Start of address modal -->
+    <div style="margin-bottom: 5%;">
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Saurav Suman Address</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-content">
+                        <div class="container mt-5">
+                            <div class="card-group">
+                                <!-- <div class="col-4 rowCard" *ngFor="let customer of result;let i =index"> -->
+                                <div class="col-6 rowCard" *ngFor="let i of cc">
+                                    <div class="card card-body " style="background-color: rgba(84, 17, 240, 0.281);border:5px outset white; border-radius: 10px;">
+
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <h6 style="margin-left: 5%;"> Address Id: 101</h6>
+                                                <button class="btn btn-outline-danger" style="margin-left: 20%;" (click)=deleteAddress()>Delete</button>&nbsp;&nbsp;
+                                            </div>
+                                            <h6 class=" cardData textSize" style="margin-top: 10px; ">Address Line One: H.No-1,Prabhat Colony,Chas</h6>
+                                            <h6 class=" cardData textSize">Address Line Two: Gagan Apartment,Exhibition Road</h6>
+                                            <h6 class="cardData textSize">District: Bokaro</h6>
+                                            <h6 class=" cardData textSize">State: Jharkhand</h6>
+                                            <h6 class=" cardData textSize">LandMark: Behind PNB</h6>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- End of Address model -->
+
+
+
+    <!-- <h2 *ngIf="result.length==0">
+        Sorry,Customer does not exist...!!!!!
+    </h2> -->
+    <!-- </ng-container> -->
+</div>

@@ -1,0 +1,60 @@
+<div class="animated ">
+
+    <h2 class="mt-5">Enter Your Credentials</h2>
+<div class="container row mb-5" style="margin-top: 2%;">
+    <div class="col-md-6">
+        <form [formGroup]="loginForm">
+            <!-- Start of username input field -->
+            <div class="col-md-11">
+                <div class="input-group mb-3 input-field">
+                    <span><img src="https://img.icons8.com/ios-filled/50/000000/username.png" /></span>&nbsp;&nbsp;
+                    <input type="email" formControlName="username" placeholder="Username (Email Address)">
+                </div>
+                <!-- Validation Messages -->
+                <div *ngIf="submitted && loginForm.controls.username.errors">
+                    <div class="text-danger" *ngIf="loginForm.controls.username.errors.required">
+                        Username is required ..!
+                    </div>
+                    <div class="text-danger" *ngIf="loginForm.controls.username.errors.email">
+                        Invalid Email Address ..!
+                    </div>
+                </div>
+                <div class="text-danger" *ngIf="usernameFlag">
+                    {{usernameErrorMessage}}
+                </div>
+            </div>
+            <!-- End of username input field -->
+
+
+             <!-- Start of password input field -->
+
+             <div class="col-md-11">
+                <div class="input-group mb-3 input-field">
+                    <span><img src="https://img.icons8.com/ios-filled/50/000000/password.png" /></span>&nbsp;&nbsp;
+                    <input type="password" formControlName="password" placeholder="Password">
+                </div>
+                <!-- Validation Messages -->
+                <div *ngIf="submitted && loginForm.controls.password.errors">
+                    <div class="text-danger" *ngIf="loginForm.controls.password.errors.required">
+                        Password is required ..!
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- End of password input field -->
+            
+            <div>
+                <button class="loginButton" (click)="login()">Login</button>
+                <button class="cancelButton" type="reset">Cancel</button><br><br>
+                <a class=" text-primary" routerLink="/user/forgotPassword"><b>Forgot Password?</b></a><br><br>
+        <a class=" text-primary" routerLink="/user/addUser">
+            <h6><b>Don't have account, create new one</b></h6>
+        </a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-1">
+        <img src="../../../assets/merchant.png" class="image">
+    </div>
+    </div>
+    </div>

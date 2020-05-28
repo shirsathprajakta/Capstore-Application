@@ -1,0 +1,88 @@
+<div class="row container-fluid mt-2">
+    <div class="col-lg-12 mt-2">
+        <h5 class="text-center pt-3"><i class="fas fa-list-ul"></i> &nbsp;Detail Description</h5>
+        <br>
+        
+        <table class="table table-striped  ">
+            <caption class="text-center">Order Info</caption>
+            <thead>
+                
+                <tr>
+                    
+                    <th scope="col">Order Id</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Order Date</th>
+                    <th scope="col">Order Amount</th>
+                    <th scope="col">Coupon Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    
+                    <td>{{order.orderId}}</td>
+                    <td>{{order.product.productName}}</td>
+                    <td>{{order.orderDate | date }}</td>
+                    <td>{{order.orderAmount}}</td>
+                    <td>{{couponApplied}}</td>
+                    
+                </tr>
+            </tbody>
+            <br>
+            <thead>
+                <caption class="text-center">Shipping Info</caption>
+                <tr>
+                    <th scope="col">Shipping ID</th>
+                    <th scope="col">Address Line</th>
+                    <th scope="col">City</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Status</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{order.address.addressId}}</td>
+                    <td>{{order.address.addressLineOne}}<br/>{{order.address.addressLineTwo}}</td>
+                    <td>{{order.address.district}}</td> 
+                    <td>{{order.address.state}}</td>
+                    <td>{{order.orderStatus}}</td>
+                </tr>
+            </tbody>
+            <br>
+            <thead>
+                <caption class="text-center">Transaction Info</caption>
+                <tr>
+                    <th scope="col">Transaction ID</th>
+                    <th scope="col">Transaction Date</th>
+                    <th scope="col">Transaction Amount</th>
+                    <th scope="col">Transaction Method</th>
+                    <th scope="col">Transaction Status</th>   
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{order.transaction.transactionId}}</td>
+                    <td>{{order.transaction.transactionDate | date}}</td>
+                    <td>{{order.transaction.transactionMoney}}</td>
+                    <td>{{order.transaction.transactionMethod}}</td>
+                    <td>{{order.transaction.transactionStatus}}</td>
+                </tr>
+            </tbody>
+            <br>
+           
+        </table>
+        <div class="col offset-3" *ngIf="cancelStatus">
+            <button class="btn btn-outline-add " [disabled]="!cancellation " (click)="cancel()">Request to Cancellation</button>
+            
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-outline-add " [disabled]="cancellation " (click)="return()">Request to return order</button>
+        </div>
+       
+        <br><br>
+    </div>
+
+    
+</div>
+
+
+

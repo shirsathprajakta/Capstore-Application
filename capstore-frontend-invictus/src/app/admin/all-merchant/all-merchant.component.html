@@ -1,0 +1,91 @@
+<div class="animate">
+
+
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-md-4 col-6">
+                <div class="card-counter success">
+                    <i class="fas fa-user-friends"></i>
+                    <span class="count-numbers">5</span>
+                    <span class="count-name">Total Merchants : </span>
+                </div>
+            </div>
+            <div class="col-md-4 col-6">
+                <div class="card-counter danger">
+                    <i class="fas fa-users"></i>
+                    <span class="count-numbers">4</span>
+                    <span class="count-name">Direct Merchants</span>
+                </div>
+            </div>
+            <div class="col-md-4 col-6">
+                <div class="card-counter info">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span class="count-numbers">1</span>
+                    <span class="count-name">3<sup>rd</sup>Party Merchants </span>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-6 text-right">
+
+
+
+                <select class="form-control" id="sort">
+                    <option value="" disabled>Sort By:</option>
+                    <option value="orders">No. Of Orders</option>
+                    <option value="products">No. Of Products</option>
+                    <option value="categories">Rating</option>
+                </select>
+
+            </div>
+        </div>
+        <hr>
+        
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-center">Merchants</h3>
+
+            </div>
+        </div>
+
+           
+        <div class="row my-3" *ngIf="merchants.length == 0">
+            <div class="col-10 offset-1">
+                <p class="lead text-center">No Merchants Here Yet!</p>
+                <p class="lead text-center">Keep Calm And Add a 3<sup>rd</sup>Party Merchant</p>
+                <p class="text-center">
+                    <a routerLink="/admin/addMerchant" class="btn btn-info btn-lg">Add Merchant</a>
+                </p>
+            </div>
+        </div>
+        <div class="row border bottom mb-5" *ngFor="let merchant of merchants">
+            <div class="col-md-4 col-10 offset-md-0 offset-1">
+                <p class="lead p-2">Name: {{merchant.name}}</p>
+                <p class="lead p-2">E-Mail: {{merchant.username}}</p>
+                <p class="lead p-2">Phone No.: {{merchant.phoneNo}}</p>
+            </div>
+            <div class="col-md-4 col-10 offset-md-0 offset-1">
+                <p class="text-center mt-5">
+                    <button type="button" class="btn btn-info">Contact Details</button>
+                </p>
+                <p class="text-center mt-5">
+                    <button type="button" class="btn btn-outline-danger">Delete</button>
+                </p>
+            </div>
+            <div class="col-md-4 col-10 offset-md-0 offset-1">
+                <p>
+                    <button class="btn btn-primary mt-3"> View </button>
+                </p>
+                <p>
+                    <select name="" id="" class="form-control">
+                        <option value="" disabled>Choose Action</option>
+                        <option value="products">Products</option>
+                        <option value="orders">Orders</option>
+                        <option value="feedbacks">Feedbacks</option>
+                    </select>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

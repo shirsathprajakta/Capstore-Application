@@ -1,0 +1,59 @@
+<div class="my-5">
+
+
+    <h3 class="card-header font-weight-bold mb-3">
+        Sent Invitations
+    </h3>
+    <div class="container-fluid animated">
+        <div *ngIf="invitations.length == 0" class="row">
+            <div class="col-12">
+
+                <p class="lead text-center">
+                    You did not sent any Invites Right.
+                </p>
+                <br>
+                <p class="text-muted text-center">Send Your First Invite</p>
+                <br>
+                <p class="text-center">
+
+                    <a routerLink="#" class="btn btn-primary">Send An Invite</a>
+                </p>
+            </div>
+        </div>
+        <div class="row border p-3 bottom" *ngFor="let invitation of invitations;">
+            <div class="col-12 col-md-6">
+                <p class="lead pl-3">{{invitation.header}}</p>
+                <p class="lead pl-3">{{invitation.message}}</p>
+            </div>
+            <div class="col-12 col-md-6 text-right align-middle">
+                <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#merchantModal"
+                    (click)="setMerchant(invitation.merchant)">
+                    View Merchant
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="merchantModal" tabindex="-1" role="dialog" aria-labelledby="merchantModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="merchantModalLabel">Merchant Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"> <i class="fas fa-times"></i></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="lead">Name: {{merchant.name}}</p>
+                <p class="lead">Phone No: {{ merchant.phoneNo }} </p>
+                <p class="lead">Alt. Phone No. {{merchant.alternatePhoneNo}}</p>
+                <p class="lead">E-Mail: {{merchant.alternateEmail}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Go Back</button>
+            </div>
+        </div>
+    </div>
+</div>

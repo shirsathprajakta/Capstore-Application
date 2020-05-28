@@ -1,0 +1,26 @@
+<div class="animated">
+    <h2 class="text-center mt-3" [hidden]="!temp">Your Addresses</h2>
+    <hr>
+    <div class="container mt-5">
+        <div class="card-group" *ngFor="let address of addresses">
+
+            <div class="col-12 rowCard" *ngIf="!address.deleted">
+                <div class="card card-body "
+                    style="background-color: rgba(0, 0, 0, 0.021);border:5px outset white; border-radius: 10px;">
+                    <div class="card-body">
+                        <h3 class=" cardData textSize">{{address.addressLineOne}}, {{address.addressLineTwo}}</h3>
+                        <h4 class=" cardData textSize">{{address.district}} ({{address.state}})</h4>
+                        <h5 class="cardData textSize">{{address.landmark}}</h5>
+                    </div>
+                    <div class="col-1">
+                        <button class="btn btn-outline-delete" (click)="delete(address.addressId)"
+                            type="submit">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-add" routerLink="/customer/add-address" type="submit">+ ADD NEW ADDRESS</button>
+    </div>
+</div>

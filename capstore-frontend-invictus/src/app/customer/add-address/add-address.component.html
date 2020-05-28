@@ -1,0 +1,78 @@
+<div class="animated">
+    <h2 class="text-center mt-3">Add Address</h2>
+    <hr>
+    <div class="col-lg-10 col-md-10">
+        <form [formGroup]="addForm" (ngSubmit)="addAddress()">
+            <div class="form-group row">
+                <label for="addressLineOne" class="col-lg-5 text-right font-weight-bold">
+                    Line one :
+                </label>
+                <div class="col-lg-7">
+                    <input type="text" class="form-control " placeholder="Address (House No, Building, Street, Area)"
+                        formControlName="addressLineOne" />
+                    <div *ngIf="submitted && addForm.controls.addressLineOne.errors">
+                        <div class="text-danger" *ngIf="addForm.controls.addressLineOne.errors.required">
+                            <h6>Mandatory Field</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <label for="addressLineTwo" class="col-lg-5 text-right font-weight-bold">
+                    Line two :
+                </label>
+                <div class="col-lg-7">
+                    <input type="text" class="form-control " placeholder="Locality/Town"
+                        formControlName="addressLineTwo" />
+                    <div *ngIf="submitted && addForm.controls.addressLineTwo.errors">
+                        <div class="text-danger" *ngIf="addForm.controls.addressLineTwo.errors.required">
+                            <h6>Mandatory Field</h6>
+                        </div>
+                    </div>
+                </div>
+
+
+                <label for="district" class="col-lg-5 text-right font-weight-bold">
+                    District :
+                </label>
+                <div class="col-lg-7">
+                    <input type="text" class="form-control " placeholder="City/District" formControlName="district" />
+                    <div *ngIf="submitted && addForm.controls.district.errors">
+                        <div class="text-danger" *ngIf="addForm.controls.district.errors.required">
+                            <h6>District can't be empty</h6>
+                        </div>
+                    </div>
+                </div>
+
+
+                <label for="state" class="col-lg-5 text-right font-weight-bold">
+                    State :
+                </label>
+                <div class="col-lg-7">
+                    <input type="text" class="form-control " placeholder="Enter State" formControlName="state" />
+                    <div *ngIf="submitted && addForm.controls.state.errors">
+                        <div class="text-danger" *ngIf="addForm.controls.state.errors.required">
+                            <h6>State can't be empty</h6>
+                        </div>
+                    </div>
+                </div>
+
+
+                <label for="landmark" class="col-lg-5 text-right font-weight-bold">
+                    Landmark :
+                </label>
+                <div class="col-lg-7">
+                    <input type="text" class="form-control " placeholder="Enter landmark" formControlName="landmark" />
+                    <div *ngIf="submitted && addForm.controls.landmark.errors">
+                        <div class="text-danger" *ngIf="addForm.controls.landmark.errors.required">
+                            <h6>Provide landmark</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-right">
+                    <button class="btn btn-outline-add" type="submit">Add</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

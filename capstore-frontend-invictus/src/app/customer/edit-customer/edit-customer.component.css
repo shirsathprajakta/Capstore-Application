@@ -1,0 +1,34 @@
+.btn-outline-add{
+      
+
+    border:none;
+    border-radius: 25px;
+    outline: none;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    height: 40px;
+    width: 170px;
+    background: #977cb3;
+    color: #fff;
+    font-size: 15px;
+  
+    }
+  
+  .btn-outline-add:hover{
+      cursor: pointer;
+  background: #372347;
+  color: #ffffff;
+  }
+
+  .saveButton {
+    width: 170px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: yellowgreen;
+    outline: none;
+    margin-left: 20%;
+}
+
+.saveButton:hover {
+    background-color: green;
+}
